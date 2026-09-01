@@ -164,14 +164,14 @@ except Exception:
 if timing is not None:
     elapsed, active = timing
     if active:
-        turn_part = f"{YELLOW}thinking {format_duration(elapsed)}{RESET}"
+        turn_part = f"{CYAN}thinking {format_duration(elapsed)}{RESET}"
     else:
         turn_part = f"{DIM}last turn {format_duration(elapsed)}{RESET}"
 else:
     turn_part = None
 
 # --- Line 1: model | dir | branch +ins -del | cost | turn time ---
-segments = [model]
+segments = [f"{CYAN}{model}{RESET}"]
 segments.append(f"{CYAN}{dir_display}{RESET}")
 if has_git:
     segments.append(git_part)
